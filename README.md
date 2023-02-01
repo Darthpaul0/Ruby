@@ -1,2 +1,2 @@
 # Ruby
-Learning some Ruby from scratch
+Learning some Ruby from scratch 💎
