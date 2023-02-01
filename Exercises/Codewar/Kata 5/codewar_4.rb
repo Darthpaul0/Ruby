@@ -8,44 +8,46 @@ the sum of the perimeters of these squares is:
 https://www.codewars.com/kata/559a28007caad2ac4e000083
 
 =end
-
-# classical Fibonacci sequence
-def fibo_sequence(n)
-  sequence = Array.new
-  if n == 0 or n == 1
-    return 1
-  else
-    idx = 0
-    sum = 0
-    sequence.push(0)
-    sequence.push(1)
-    while idx < n
-      first = sequence[sequence.length() - 1]
-      second = sequence[sequence.length() - 2]
-      sum = first + second
-      sequence.push(sum)
-      idx += 1
+module Codewar_4
+  # classical Fibonacci sequence
+  def self.fibo_sequence(n)
+    sequence = Array.new
+    if n == 0 or n == 1
+      return 1
+    else
+      idx = 0
+      sum = 0
+      sequence.push(0)
+      sequence.push(1)
+      while idx < n
+        first = sequence[sequence.length() - 1]
+        second = sequence[sequence.length() - 2]
+        sum = first + second
+        sequence.push(sum)
+        idx += 1
+      end
+      sequence
     end
-    sequence
+  end
+
+  def self.perimeter(n)
+    # get Fibonacci's sequence
+    sequence = fibo_sequence(n)
+
+    # sum its numbers
+    sequence = sequence.sum
+
+    # multiply it by 4
+    return sequence*4
+
   end
 end
 
-def perimeter(n)
-  # get Fibonacci's sequence
-  sequence = fibo_sequence(n)
-
-  # sum its numbers
-  sequence = sequence.sum
-
-  # multiply it by 4
-  return sequence*4
-
-end
-
 # check fibo_sequence is working properly
-print fibo_sequence(5)
-puts "\n"
+# check = Codewar_4.fibo_sequence(5)
+# print check
+# puts "\n"
 
 # check perimeter function
-puts "The perimeter equals to #{perimeter(5)}"
-puts "The perimeter equals to #{perimeter(7)}"
+# check = Codewar_4.perimeter(5)
+# puts "The perimeter equals to #{check}"
